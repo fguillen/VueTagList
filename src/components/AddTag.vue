@@ -3,11 +3,13 @@
     <input type="text" v-model.trim="title" />
     <button type="submit">+</button>
   </form>
+  <TagsSuggestion :partial-title="title" />
 </template>
 
 <script setup lang="ts">
 import { type Ref, ref } from 'vue';
 import { useTagsStore } from '@/stores/TagsStore';
+import TagsSuggestion from './TagsSuggestion.vue';
 
 const title: Ref<string> = ref("");
 
