@@ -3,6 +3,7 @@
     <h1>App</h1>
   </header>
 
+  <AddTag @onAddTag="addTag" />
   <TagList :tags="tags" />
 </template>
 
@@ -10,6 +11,7 @@
 import type { Tag } from '@/models/Tag';
 import { type Ref, ref } from 'vue';
 import TagList from './components/TagList.vue';
+import AddTag from './components/AddTag.vue';
 
 const tags: Ref<Tag[]> = ref([
   {
@@ -25,5 +27,13 @@ const tags: Ref<Tag[]> = ref([
     title: "Blog Beitrag schreiben"
   },
 ]);
+
+const addTag = (title: string) => {
+  console.log("addTag", title);
+  tags.value.push({
+    id: title,
+    title: title
+  });
+}
 
 </script>
