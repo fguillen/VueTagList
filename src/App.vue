@@ -12,5 +12,5 @@ import { useTagsStore } from '@/stores/TagsStore';
 import TagList from './components/TagList.vue';
 import AddTag from './components/AddTag.vue';
 
-const tags = useTagsStore.tags;
+const { tags } = useTagsStore();
 </script>

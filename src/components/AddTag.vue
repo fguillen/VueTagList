@@ -6,15 +6,17 @@
 </template>
 
 <script setup lang="ts">
-import { type Ref, ref, defineEmits } from 'vue';
+import { type Ref, ref } from 'vue';
 import { useTagsStore } from '@/stores/TagsStore';
 
 const title: Ref<string> = ref("");
 
+const { addTag: storeAddTag } = useTagsStore();
+
 const addTag = () => {
   if (title.value == "") return;
   console.log(title.value);
-  useTagsStore.addTag(title.value);
+  storeAddTag(title.value);
   title.value = "";
 }
 </script>
