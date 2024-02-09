@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch, type Ref } from 'vue';
 
 import { useSuggestionsFinder } from '@/stores/SuggestionsFinder'
 
@@ -17,13 +17,19 @@ const props = defineProps({
 
 const { getSuggestions } = useSuggestionsFinder();
 
-const suggestedTags = computed(() => {
+interface SuggestedTag {
+  title: String;
+  selected: Boolean;
+}
+const suggestedTags: Ref<SuggestedTag[]> = ref([]);
+
+watch(() => props.partialTitle, (): void => {
   if (props.partialTitle && props.partialTitle.length > 1) {
-    return getSuggestions(props.partialTitle, 10);
+    const result = getSuggestions(props.partialTitle, 10);
+    suggestedTags.value = result.map(e => ({ title: e, selected: false }));
   } else {
-    return [];
+    suggestedTags.value = [];
   }
 });
 
 </script>
-@/stores/SuggestionsFinder@/data/SuggestionsFinder
