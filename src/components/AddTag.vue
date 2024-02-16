@@ -12,7 +12,7 @@ import { useTagsStore } from '@/stores/TagsStore';
 import TagsSuggestion from './TagsSuggestion.vue';
 
 const title: Ref<string> = ref("");
-const tagsSuggestionRef = ref(null);
+const tagsSuggestionRef: Ref = ref(null);
 
 const { addTag: storeAddTag } = useTagsStore();
 

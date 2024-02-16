@@ -1,8 +1,4 @@
 <template>
-  <header>
-    <h1>App</h1>
-  </header>
-
   <AddTag />
   <TagList :tags="tags" />
 </template>

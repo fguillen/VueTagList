@@ -1,8 +1,20 @@
 {
   "name": "vue-tag-list",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vue-tag-list.umd.cjs",
+  "module": "./dist/vue-tag-list.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-tag-list.js",
+      "require": "./dist/vue-tag-list.umd.cjs"
+    }
+  },
+
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

@@ -8,6 +8,12 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+
+    <script type="module">
+      import { createApp } from 'vue';
+      import { TagListApp } from '/src/main.ts';
+
+      createApp(TagListApp).mount('#app');
+    </script>
   </body>
 </html>
