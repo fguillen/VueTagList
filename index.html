@@ -12,8 +12,12 @@
     <script type="module">
       import { createApp } from 'vue';
       import { TagListApp } from '/src/main.ts';
-
-      createApp(TagListApp).mount('#app');
+      const suggestions = [
+        "2D",
+        "2D Fighter",
+        "2D Platformer",
+      ]
+      createApp(TagListApp, { suggestions: suggestions }).mount('#app');
     </script>
   </body>
 </html>

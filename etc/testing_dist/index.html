@@ -23,7 +23,13 @@
     import { createApp, ref } from 'vue'
     import { TagListApp } from '../../dist/vue-tag-list.js';
 
-    createApp(TagListApp).mount('#app');
+    const suggestions = [
+      "2D",
+      "2D Fighter",
+      "2D Platformer",
+    ];
+
+    createApp(TagListApp, { suggestions: suggestions }).mount('#app');
   </script>
 </body>
 
