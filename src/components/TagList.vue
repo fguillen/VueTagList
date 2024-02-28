@@ -13,10 +13,4 @@ import TagElement from '@/components/TagElement.vue';
 defineProps<{
   tags: Array<Tag>;
 }>();
-
-const emit = defineEmits(["onRemove"]);
-
-const remove = () => {
-  emit("onRemove");
-}
 </script>
